@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>Seinfeld Party of Three</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Use min-height for mobile screens */
             margin: 0;
             background-image: url('Seinfeld.jpg');
             background-size: cover;
@@ -17,36 +18,48 @@
 
         #fortune-container {
             text-align: center;
-            margin-top: 1in;
+            margin-top: 10%; /* Use percentage for margin */
+            padding: 5%; /* Add padding for mobile */
         }
 
         #fortune-text {
             font-family: 'Dancing Script', cursive;
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: gray;
+            font-size: 2em; /* Use em for font size */
+            margin-bottom: 5%; /* Use percentage for margin */
+            color: red;
             font-weight: bold;
         }
 
         #fortune-cookie-image {
-            width: 150px;
+            width: 80%; /* Use percentage for width */
+            max-width: 200px; /* Set a max width */
             height: auto;
             cursor: pointer;
         }
 
         #fortune-display {
-            margin-top: 20px;
-            font-size: 18px;
-            padding: 20px;
+            margin-top: 5%; /* Use percentage for margin */
+            font-size: 1.2em; /* Use em for font size */
+            padding: 5%; /* Use percentage for padding */
             border: 1px solid #ccc;
             border-radius: 5px;
-            min-height: 50px;
             background-color: white;
             color: black;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+        }
+
+        /* Media queries for smaller screens */
+        @media (max-width: 600px) {
+            #fortune-text {
+                font-size: 1.5em;
+            }
+
+            #fortune-display {
+                font-size: 1em;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
