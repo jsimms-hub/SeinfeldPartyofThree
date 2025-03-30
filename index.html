@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortune Cookie Generator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('Seinfeld.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #fortune-container {
+            text-align: center;
+            margin-top: 1in;
+        }
+
+        #fortune-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: gray;
+            font-weight: bold;
+        }
+
+        #fortune-cookie-image {
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        #fortune-display {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            min-height: 50px;
+            background-color: white;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="fortune-container">
+        <div id="fortune-text">Click here for fortune</div>
+        <img id="fortune-cookie-image" src="Cookie.png" alt="Fortune Cookie">
+        <div id="fortune-display"></div>
+    </div>
+    <script>
+       const fortunes = [
+    "A new friend will soon enter your life. They will insist on talking about their puffy shirt.",
+    "You will find yourself in a contest. The prize? A junior mint.",
+    "Your next date will go surprisingly well, until they reveal they're a close talker.",
+    "An important decision looms. It involves soup. Choose wisely.",
+    "You will encounter a parking spot. It will be a 'sidler.'",
+    "Beware the low talker. They have important information about your dry cleaning.",
+    "You will soon have a run-in with a puffy vest. It will not go well.",
+    "An unexpected gift awaits. It's a marble rye. Handle with care.",
+    "You will find yourself in a conversation about sponges. It will be longer than you expect.",
+    "Your next meal will involve a big salad. It will be very big.",
+    "You will be accused of double-dipping. Deny everything.",
+    "A strange man will ask you about your muffin tops. Avoid eye contact.",
+    "You will encounter a 'master of your domain.' It will be awkward.",
+    "Your next vacation will involve a trip to the Hamptons. Bring your own lobster.",
+    "You will find yourself in a debate about 'yada yada.' Tread lightly.",
+    "An unexpected guest will arrive. They will insist on wearing a velvet tracksuit.",
+    "You will be offered a 'second chance.' It will involve a calzone.",
+    "You will be asked to hold someone's 'spare a square.' Politely decline.",
+    "Your next conversation will involve a discussion about 'shrinkage.' Prepare for discomfort.",
+    "You will discover a new talent. It's the ability to identify a 're-gifter.'",
+    "Your next meal will involve a black and white cookie. It will bring you balance.",
+    "You will find yourself in a situation involving a 'serenity now' moment. Try to stay calm.",
+    "A new job opportunity will arise. It involves selling raincoats. In the summer.",
+    "You will accidentally become a 'hipster doofus.' Embrace it.",
+    "You will be forced to participate in a 'man-zier' fitting. It will not be your finest hour."
+];
+
+        const fortuneCookieImage = document.getElementById("fortune-cookie-image");
+        const fortuneDisplay = document.getElementById("fortune-display");
+
+        if (fortuneCookieImage && fortuneDisplay) {
+            fortuneCookieImage.addEventListener("click", function() {
+                const randomIndex = Math.floor(Math.random() * fortunes.length);
+                fortuneDisplay.textContent = fortunes[randomIndex];
+            });
+        } else {
+            console.error("Error: fortuneCookieImage or fortuneDisplay element not found.");
+        }
+    </script>
+</body>
+</html>
